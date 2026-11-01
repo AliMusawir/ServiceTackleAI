@@ -1,0 +1,7 @@
+# Direct PHP Execution for API folder (Prevents React SPA intercept)
+RewriteEngine Off
+Options -Indexes
+
+<FilesMatch "\.php$">
+    Require all granted
+</FilesMatch>
