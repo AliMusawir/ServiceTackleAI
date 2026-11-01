@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="112" fill="#060913"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" stroke="#1E293B" stroke-width="12"/>
+  
+  <!-- Outer Glow Ring -->
+  <circle cx="256" cy="256" r="180" stroke="url(#blue_grad)" stroke-width="8" opacity="0.3"/>
+  
+  <!-- Neural Connectivity Mesh -->
+  <path d="M140 340L210 180L300 280L370 160" stroke="url(#blue_grad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Glowing Nodes -->
+  <circle cx="140" cy="340" r="28" fill="#38BDF8"/>
+  <circle cx="210" cy="180" r="24" fill="#60A5FA"/>
+  <circle cx="300" cy="280" r="24" fill="#60A5FA"/>
+  <circle cx="370" cy="160" r="28" fill="#38BDF8"/>
+  
+  <!-- Core Node Highlights -->
+  <circle cx="140" cy="340" r="12" fill="#FFFFFF"/>
+  <circle cx="370" cy="160" r="12" fill="#FFFFFF"/>
+  
+  <defs>
+    <linearGradient id="blue_grad" x1="140" y1="160" x2="370" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="0.5" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+</svg>
