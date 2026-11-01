@@ -1,0 +1,33 @@
+RewriteEngine On
+
+# Always load the Vite-built entry point for the site root.
+RewriteRule ^$ dist/index.html [L]
+RewriteRule ^index\.html$ dist/index.html [L]
+
+# Allow direct access to existing files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# React SPA Fallback: Serve dist/index.html for production builds
+RewriteRule ^ dist/index.html [L]
+
+# Security: Block direct downloads of sensitive files
+<FilesMatch "^(\.env|.*\.db|.*\.sqlite|.*\.sqlite3)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(bak|backup|config|ini|log|sql|sh|sqlite|sqlite3)$">
+    Require all denied
+</FilesMatch>
+
+# Disable caching on HTML and PHP files so deployments load immediately
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+Options -Indexes
